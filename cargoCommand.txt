@@ -1,0 +1,7 @@
+CREATE USER subgraph WITH SUPERUSER PASSWORD 'subgraph';
+
+
+cargo run -p graph-node --release -- \
+  --postgres-url postgresql://subgraph:subgraph@localhost:5432/graph-node \
+  --ethereum-rpc mainnet:https://rpc.testnet.pulsechain.com \
+  --ipfs 127.0.0.1:5001
